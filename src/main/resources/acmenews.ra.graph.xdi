@@ -1,4 +1,0 @@
-([+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5#login{$do}/$get)/$is$ref/{}
-([+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5#login{$do}$if$and/$true){$from}/$is/[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5
-([+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5#login{$do}$if$and/$true){$msg}<$sig><$valid>&/&/true
-([+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5/$public)$do/$get/[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5#login{$do}

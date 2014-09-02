@@ -1,59 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="org.apache.commons.lang.StringEscapeUtils" %>
-<%@ page import="xdi2.connect.example.ra.acmenews.AcmenewsStatus" %>
-<%@ page import="xdi2.connect.example.ra.acmepizza.AcmepizzaStatus" %>
+<%@ page import="xdi2.connect.acmenews.AcmepizzaConnectRequest" %>
+<%@ page import="xdi2.connect.acmenews.AcmepizzaStatus" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>XDI Connect - Example RAs</title>
-	<link rel="stylesheet" target="_blank" href="style.css" TYPE="text/css" MEDIA="screen">
+	<title>XDI Connect - Example RA +acmepizza</title>
+	<link rel="stylesheet" target="_blank" href="/style.css" TYPE="text/css" MEDIA="screen">
 </head>
 
 <body>
 
 	<div id="header">
 		<img src="/images/app.png" class="app">
-		<span id="appname">Example RAs</span>
-		These are example requesting authorities (RAs) for Connect requests.
+		<span id="appname">Example RA +acmepizza</span>
+		Demonstrates how an RA subscribes to a part of an XDI graph.
 		<hr noshade>
 		<hr noshade>
 	</div>
 
-	<div id="main">
+	<center><img src="/images/acmepizza.png" class="splash"></center>
 
-	<table cellpadding="0" cellspacing="0" border="0"><tr><td>
-	<form action="/acmenews.jsp">
-	    <input type="submit" value="+acmenews" class="examplera">
-	</form>
-	</td>
-	<td>Demonstrates how to log in to an RA.<br>
-	<p class="small"><%= StringEscapeUtils.escapeHtml(AcmenewsStatus.status()).replace("\n", "<br>") %></p></td>
-	</tr></table>
+	<% if (request.getAttribute("error") != null) { %>
 
-	<hr noshade>
+		<p><font color="#ff0000"><%= request.getAttribute("error") != null ? request.getAttribute("error") : "" %></font></p>
 
-	<table cellpadding="0" cellspacing="0" border="0"><tr><td>
-	<form action="/acmepizza.jsp">
-	    <input type="submit" value="+acmepizza" class="examplera">
-	</form>
-	</td>
-	<td>Demonstrates how an RA subscribes to a part of an XDI graph.
-	<p class="small"><%= StringEscapeUtils.escapeHtml(AcmepizzaStatus.status()).replace("\n", "<br>") %></p></td>
-	</tr></table>
+	<% } %>
 
-	<hr noshade>
+	<%
+		String xdiMessageEnvelope = AcmepizzaConnectRequest.connectRequest(request.getServletContext()).getMessageEnvelope().getGraph().toString("XDI/JSON", null);
+	%>
+
+	<center><form action="<%= request.getServletContext().getInitParameter("connectEndpointUri") %>" method="post">
+
+		<input type="hidden" name="xdiMessageEnvelope" value="<%= StringEscapeUtils.escapeHtml(xdiMessageEnvelope) %>">	
+		<input type="submit" value="" class="xdiconnect">
+		(Send AA-initiated Connect request)
 	
-	<table cellpadding="0" cellspacing="0" border="0"><tr><td>
-	<form action="/acmeapp.jsp">
-	    <input type="submit" value="+acmeapp" class="examplera">
-	</form>
-	</td>
-	<td>Demonstrates how to give an RA native app access to a part of an XDI graph.</td>
-	</tr></table>
+	</form></center>
 
-	</div>
+	<center>
+	<p class="small"><%= StringEscapeUtils.escapeHtml(AcmepizzaStatus.status()).replace("\n", "<br>") %></p>
+	</center>
 
 	<%@ include file="/footer.jsp"%>
 

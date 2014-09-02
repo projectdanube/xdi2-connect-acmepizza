@@ -1,4 +1,4 @@
-package xdi2.connect.example.ra.acmepizza;
+package xdi2.connect.acmepizza;
 
 import java.io.IOException;
 import java.io.StringReader;
