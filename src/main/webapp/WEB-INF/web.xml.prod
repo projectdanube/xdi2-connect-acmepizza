@@ -10,7 +10,7 @@
 
 	<servlet>
 		<servlet-name>acmepizza</servlet-name>
-		<servlet-class>xdi2.connect.example.ra.acmepizza.AcmepizzaReturnServlet</servlet-class>
+		<servlet-class>xdi2.connect.acmepizza.AcmepizzaReturnServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>acmepizza</servlet-name>
