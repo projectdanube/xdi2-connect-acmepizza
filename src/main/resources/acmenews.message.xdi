@@ -1,0 +1,10 @@
+[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5[$msg]@0/$is()/({$to})
+[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5[$msg]@0$do/$do{}/[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5#login{$do}
+[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5[$msg]@0/$do/({$to}/+ca)+ca#community$do
+[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5[$msg]@0<#return><$uri>&/&/"..."
+[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5[$msg]@0<$sig>&/&/"..."
+[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5[$msg]@1/$is()/({$to})
+([+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5[$msg]@1$do/$get)/$is$ref/{}
+[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5[$msg]@1/$do/({$to}/[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5)[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5#login$do
+[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5[$msg]@1<#return><$uri>&/&/"..."
+[+]!:uuid:0b0a38c7-1120-4194-ad4c-2f52acc0e1a5[$msg]@1<$sig>&/&/"..."

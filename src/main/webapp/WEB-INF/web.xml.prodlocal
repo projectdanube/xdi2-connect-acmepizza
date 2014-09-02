@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<display-name>xdi2-connect-example-ra</display-name>
+
+	<!-- WEB INTERFACE -->
+
+	<servlet>
+		<servlet-name>acmenews</servlet-name>
+		<servlet-class>xdi2.connect.example.ra.acmenews.AcmenewsReturnServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>acmenews</servlet-name>
+		<url-pattern>/acmenews-return</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>acmepizza</servlet-name>
+		<servlet-class>xdi2.connect.example.ra.acmepizza.AcmepizzaReturnServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>acmepizza</servlet-name>
+		<url-pattern>/acmepizza-return</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>XDIOutput</servlet-name>
+		<servlet-class>xdi2.connect.output.XDIOutput</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>XDIOutput</servlet-name>
+		<url-pattern>/XDIOutput</url-pattern>
+	</servlet-mapping>
+
+	<!-- CONTEXT PARAMETERS -->
+
+	<context-param>
+		<param-name>connectEndpointUri</param-name>
+		<param-value>http://localhost:9201/connect</param-value>
+	</context-param>
+	<context-param>
+		<param-name>baseReturnUri</param-name>
+		<param-value>http://localhost:9204/</param-value>
+	</context-param>
+
+	<!-- SECURITY -->
+
+	<!-- <security-constraint> <web-resource-collection> <web-resource-name>secure</web-resource-name> 
+		<url-pattern>/*</url-pattern> </web-resource-collection> <user-data-constraint> 
+		<description>ssl</description> <transport-guarantee>CONFIDENTIAL</transport-guarantee> 
+		</user-data-constraint> </security-constraint> -->
+
+</web-app>

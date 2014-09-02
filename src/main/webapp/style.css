@@ -1,0 +1,167 @@
+html {
+}
+
+body {
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+	font-size: 16pt;
+	background-image: url('/images/back.png');
+	background-repeat: repeat-x;
+	padding-top: 50px;
+	padding-bottom: 110px;
+	margin: 0px;
+}
+
+#header {
+	font-size: 14pt;
+	font-weight: bold;
+	padding: 20px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+#logo {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+}
+
+#logoprojectdanube {
+	position: fixed;
+	right: 100px;
+	bottom: 20px;
+}
+
+#appname {
+	font-size: 20pt;
+	font-weight: bold;
+	padding-right: 20px;
+}
+
+#main {
+	background-color: #eeeeee;
+	border: 4px solid black;
+	padding: 10px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+#tech {
+	border: 4px solid gray;
+	margin-top: 50px;
+	margin-left: 100px;
+	margin-right: 100px;
+	padding: 10px;
+}
+
+#footer {
+	width: 100%;
+	height: 90px;
+	position: fixed;
+	bottom: 0px;
+	margin: 0px;
+	padding: 10px 10px 0px 10px;
+	border-top: 4px solid black;
+	background-color: #b5a2d8;
+}
+
+#footer * {
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+	color: #540dd8;
+	border-bottom: 3px solid #540dd8;
+}
+
+hr {
+	color: gray;
+	background-color: gray;
+	height: 3px;
+}
+
+textarea {
+	background-color: white;
+}
+
+textarea.input {
+	border: 3px solid black;
+	padding: 5px;
+	overflow: auto;
+}
+
+textarea.xdi {
+	border: 3px solid black;
+	width: 100%;
+	font-size: 12pt;
+}
+
+input.examplera {
+	width: 200px;
+	height: 80px;
+	margin: 20px;
+	font-family: Courier New, Courier, monospace;
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+input.xdiconnect {
+	background-image: url(/images/logo-connect.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 170px;
+	height: 86px;
+}
+
+input {
+	padding: 5px;
+}
+
+img.app {
+	margin-right: 10px;
+}
+
+img.splash {
+	padding-bottom: 40px;
+}
+
+a.graphit {
+	display: block;
+	float: right;
+	margin: 15px;
+}
+
+form.convertit {
+	display: block;
+	float: right;
+	margin: 15px;
+}
+
+li.linkcontract {
+	font-family: Courier New, Courier, monospace;
+	font-size: 12pt;
+}
+
+select {
+	padding: 5px;
+}
+
+.code {
+	font-family: Courier New, Courier, monospace;
+	background-color: white;
+}
+
+.result {
+	background-color: #deccff;
+	padding-left: 20px;
+	border: 3px dashed black;
+}
+
+.small {
+	font-size: 12pt;
+}
+
+.no-margin {
+	margin: 0px;
+}
