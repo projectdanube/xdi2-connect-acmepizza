@@ -12,11 +12,8 @@
 <body>
 
 	<div id="header">
-		<img src="/images/app.png" class="app">
-		<span id="appname">Example RA +acmepizza</span>
-		Demonstrates how to subscribe to a part of an XDI graph.
-		<hr noshade>
-		<hr noshade>
+		<center><img src="/images/app.png" class="app">
+		<span id="appname">Example RA +acmepizza</span></center>
 	</div>
 
 	<center><img src="/images/acmepizza.png" class="splash"></center>
