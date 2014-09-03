@@ -5,7 +5,7 @@ body {
 	font-family: Calibri, Arial, Helvetica, sans-serif;
 	font-size: 16pt;
 	background-image: url('/images/back.png');
-	background-repeat: repeat-x;
+	background-repeat: repeat;
 	padding-top: 50px;
 	padding-bottom: 110px;
 	margin: 0px;
@@ -55,13 +55,13 @@ body {
 
 #footer {
 	width: 100%;
-	height: 90px;
+	height: 80px;
 	position: fixed;
 	bottom: 0px;
 	margin: 0px;
-	padding: 10px 10px 0px 10px;
+	padding: 15px 10px 0px 15px;
+	background-color: white;
 	border-top: 4px solid black;
-	background-color: #b5a2d8;
 }
 
 #footer * {
@@ -165,3 +165,4 @@ select {
 .no-margin {
 	margin: 0px;
 }
+
