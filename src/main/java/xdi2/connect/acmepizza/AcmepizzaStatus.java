@@ -1,5 +1,6 @@
 package xdi2.connect.acmepizza;
 
+import java.net.URL;
 import java.util.ArrayDeque;
 import java.util.Date;
 import java.util.Deque;
@@ -13,16 +14,18 @@ import xdi2.core.features.linkcontracts.instance.GenericLinkContract;
 import xdi2.core.features.linkcontracts.instance.LinkContract;
 import xdi2.core.syntax.XDIAddress;
 import xdi2.core.util.XDIAddressUtil;
+import xdi2.discovery.XDIDiscoveryClient;
 
 public class AcmepizzaStatus {
 
 	private static Deque<Status> statuses = new ArrayDeque<Status> ();
 
-	public static void newStatus(ConnectResult connectResult) {
+	public static void newStatus(ConnectResult connectResult, URL registryEndpointUrl) {
 
 		Status status = new Status();
 		status.date = new Date();
 		status.connectResult = connectResult;
+		status.registryEndpointUrl = registryEndpointUrl;
 
 		statuses.add(status);
 		if (statuses.size() > 10) statuses.removeFirst();
@@ -44,6 +47,7 @@ public class AcmepizzaStatus {
 
 		private Date date;
 		private ConnectResult connectResult;
+		private URL registryEndpointUrl;
 
 		private String getData() {
 
@@ -55,7 +59,7 @@ public class AcmepizzaStatus {
 
 			XDIAddress XDIaddress = XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#email>&"));
 
-			XDIBasicAgent XDIagent = new XDIBasicAgent();
+			XDIBasicAgent XDIagent = new XDIBasicAgent(new XDIDiscoveryClient(this.registryEndpointUrl));
 			XDIagent.setLinkContractXDIAddress(linkContract.getContextNode().getXDIAddress());
 
 			ContextNode contextNode;
