@@ -8,7 +8,7 @@ import java.util.Iterator;
 
 import xdi2.client.agent.impl.XDIBasicAgent;
 import xdi2.client.exceptions.Xdi2ClientException;
-import xdi2.connect.core.ConnectResult;
+import xdi2.connect.core.ConnectionResult;
 import xdi2.core.ContextNode;
 import xdi2.core.features.linkcontracts.instance.GenericLinkContract;
 import xdi2.core.features.linkcontracts.instance.LinkContract;
@@ -20,11 +20,11 @@ public class AcmepizzaStatus {
 
 	private static Deque<Status> statuses = new ArrayDeque<Status> ();
 
-	public static void newStatus(ConnectResult connectResult, URL registryEndpointUrl) {
+	public static void newStatus(ConnectionResult connectionResult, URL registryEndpointUrl) {
 
 		Status status = new Status();
 		status.date = new Date();
-		status.connectResult = connectResult;
+		status.connectionResult = connectionResult;
 		status.registryEndpointUrl = registryEndpointUrl;
 
 		statuses.add(status);
@@ -46,12 +46,12 @@ public class AcmepizzaStatus {
 	private static class Status {
 
 		private Date date;
-		private ConnectResult connectResult;
+		private ConnectionResult connectionResult;
 		private URL registryEndpointUrl;
 
 		private String getData() {
 
-			Iterator<LinkContract> linkContracts = this.connectResult.getLinkContracts();
+			Iterator<LinkContract> linkContracts = this.connectionResult.getLinkContracts();
 			if (linkContracts == null || ! linkContracts.hasNext()) return null;
 
 			GenericLinkContract linkContract = (GenericLinkContract) linkContracts.next();

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="org.apache.commons.lang.StringEscapeUtils" %>
-<%@ page import="xdi2.connect.acmepizza.AcmepizzaConnectRequest" %>
+<%@ page import="xdi2.connect.acmepizza.AcmepizzaConnectionRequest" %>
 <%@ page import="xdi2.connect.acmepizza.AcmepizzaStatus" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -27,14 +27,14 @@
 	<% } %>
 
 	<%
-		String xdiMessageEnvelope = AcmepizzaConnectRequest.connectRequest(request.getServletContext()).getMessageEnvelope().getGraph().toString("XDI/JSON", null);
+		String xdiMessageEnvelope = AcmepizzaConnectionRequest.connectionRequest(request.getServletContext()).getMessageEnvelope().getGraph().toString("XDI/JSON", null);
 	%>
 
 	<center><form action="<%= request.getServletContext().getInitParameter("connectEndpointUri") %>" method="post">
 
 		<input type="hidden" name="xdiMessageEnvelope" value="<%= StringEscapeUtils.escapeHtml(xdiMessageEnvelope) %>">	
 		<input type="submit" value="" class="xdiconnect">
-		(Send AA-initiated Connect request)
+		(Send Connection Request)
 	
 	</form></center>
 

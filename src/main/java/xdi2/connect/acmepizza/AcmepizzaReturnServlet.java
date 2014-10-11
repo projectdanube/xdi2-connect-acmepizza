@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import xdi2.connect.core.ConnectResult;
+import xdi2.connect.core.ConnectionResult;
 import xdi2.connect.output.OutputCache;
 import xdi2.core.impl.memory.MemoryGraphFactory;
 import xdi2.discovery.XDIDiscoveryClient;
@@ -28,7 +28,7 @@ public class AcmepizzaReturnServlet extends HttpServlet {
 	public static final String PARAMETER_XDI_MESSAGE_RESULT = "xdiMessageResult";
 	public static final String PARAMETER_REGISTRY_ENDPOINT_URL = "registryEndpointUrl";
 
-	public static final String ATTRIBUTE_CONNECT_RESULT = "connectResult";
+	public static final String ATTRIBUTE_CONNECT_RESULT = "connectionResult";
 	public static final String ATTRIBUTE_OUTPUT_ID = "outputId";
 
 	private XDIDiscoveryClient xdiDiscoveryClient;
@@ -53,13 +53,13 @@ public class AcmepizzaReturnServlet extends HttpServlet {
 		}
 
 		MessageResult messageResult;
-		ConnectResult connectResult;
+		ConnectionResult connectionResult;
 		String outputId = UUID.randomUUID().toString();
 
 		try {
 
 			messageResult = MessageResult.fromGraph(MemoryGraphFactory.getInstance().loadGraph(new StringReader(xdiMessageResult)));
-			connectResult = ConnectResult.fromContextNode(messageResult);
+			connectionResult = ConnectionResult.fromContextNode(messageResult);
 			OutputCache.put(outputId, messageResult.getGraph());
 		} catch (Exception ex) {
 
@@ -70,11 +70,11 @@ public class AcmepizzaReturnServlet extends HttpServlet {
 
 		// new status
 
-		AcmepizzaStatus.newStatus(connectResult, registryEndpointUrl);
+		AcmepizzaStatus.newStatus(connectionResult, registryEndpointUrl);
 
 		// show UI
 
-		sendUi(request, response, connectResult, outputId);
+		sendUi(request, response, connectionResult, outputId);
 		return;
 	}
 
@@ -96,9 +96,9 @@ public class AcmepizzaReturnServlet extends HttpServlet {
 	 * Helper methods
 	 */
 
-	private static void sendUi(HttpServletRequest request, HttpServletResponse response, ConnectResult connectResult, String outputId) throws ServletException, IOException {
+	private static void sendUi(HttpServletRequest request, HttpServletResponse response, ConnectionResult connectionResult, String outputId) throws ServletException, IOException {
 
-		request.setAttribute(ATTRIBUTE_CONNECT_RESULT, connectResult);
+		request.setAttribute(ATTRIBUTE_CONNECT_RESULT, connectionResult);
 		request.setAttribute(ATTRIBUTE_OUTPUT_ID, outputId);
 		request.getRequestDispatcher("/return.jsp").forward(request, response);
 	}
