@@ -1,6 +1,5 @@
 <div id="footer">
-<img id="logo" src="/images/logo64.png">
 <img src="/images/app.png" class="app">
-<span id="appname">Example RA +acmepizza</span>
-Demonstrates how an RA subscribes to a part of an XDI graph.
+<span id="appname">Example Business Cloud +acmepizza</span>
+This demonstrates how a website can request a connection to somebody's personal cloud.
 </div>
