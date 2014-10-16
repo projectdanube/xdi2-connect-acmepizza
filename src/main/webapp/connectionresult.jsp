@@ -3,4 +3,3 @@
 <%@ page import="xdi2.connect.core.ConnectionResult" %>
 <%@ page import="xdi2.core.features.linkcontracts.instance.LinkContract" %>
 <%@ page import="java.util.Iterator" %>
-	

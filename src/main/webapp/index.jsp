@@ -30,6 +30,8 @@
 		String xdiMessageEnvelope = AcmepizzaConnectionRequest.connectionRequest(request.getServletContext()).getMessageEnvelope().getGraph().toString("XDI/JSON", null);
 	%>
 
+	<div id="main">
+
 	<center><form action="<%= request.getServletContext().getInitParameter("connectEndpointUri") %>" method="post">
 
 		<input type="hidden" name="xdiMessageEnvelope" value="<%= StringEscapeUtils.escapeHtml(xdiMessageEnvelope) %>">	
@@ -42,7 +44,7 @@
 	<p class="small"><%= StringEscapeUtils.escapeHtml(AcmepizzaStatus.status()).replace("\n", "<br>") %></p>
 	</center>
 
-	<%@ include file="/footer.jsp"%>
+	<div class="main">
 
 </body>
 </html>
