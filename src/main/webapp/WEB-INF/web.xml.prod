@@ -30,11 +30,11 @@
 
 	<context-param>
 		<param-name>connectEndpointUri</param-name>
-		<param-value>https://connect-service.projectdanube.org/connect</param-value>
+		<param-value>http://connect-service.respectnetwork.net/connect</param-value>
 	</context-param>
 	<context-param>
 		<param-name>baseReturnUri</param-name>
-		<param-value>https://acmepizza.projectdanube.org/</param-value>
+		<param-value>http://acmepizza.respectnetwork.net/</param-value>
 	</context-param>
 
 	<!-- SECURITY -->
