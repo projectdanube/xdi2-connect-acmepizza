@@ -39,15 +39,9 @@
 
 	<!-- SECURITY -->
 
-	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>secure</web-resource-name>
-			<url-pattern>/*</url-pattern>
-		</web-resource-collection>
-		<user-data-constraint>
-			<description>ssl</description>
-			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
-		</user-data-constraint>
-	</security-constraint>
+	<!-- <security-constraint> <web-resource-collection> <web-resource-name>secure</web-resource-name> 
+		<url-pattern>/*</url-pattern> </web-resource-collection> <user-data-constraint> 
+		<description>ssl</description> <transport-guarantee>CONFIDENTIAL</transport-guarantee> 
+		</user-data-constraint> </security-constraint> -->
 
 </web-app>
