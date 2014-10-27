@@ -30,6 +30,7 @@ public class AcmepizzaReturnServlet extends HttpServlet {
 
 	public static final String ATTRIBUTE_CONNECT_RESULT = "connectionResult";
 	public static final String ATTRIBUTE_OUTPUT_ID = "outputId";
+	public static final String ATTRIBUTE_CONNECT_RESULT_EMAIL = "connectionResultEmail";
 
 	private XDIDiscoveryClient xdiDiscoveryClient;
 
@@ -70,7 +71,8 @@ public class AcmepizzaReturnServlet extends HttpServlet {
 
 		// new status
 
-		AcmepizzaStatus.newStatus(connectionResult, registryEndpointUrl);
+		String email = AcmepizzaStatus.newStatus(connectionResult, registryEndpointUrl);
+		request.setAttribute(ATTRIBUTE_CONNECT_RESULT_EMAIL, email);
 
 		// show UI
 

@@ -20,7 +20,7 @@ public class AcmepizzaStatus {
 
 	private static Deque<Status> statuses = new ArrayDeque<Status> ();
 
-	public static void newStatus(ConnectionResult connectionResult, URL registryEndpointUrl) {
+	public static String newStatus(ConnectionResult connectionResult, URL registryEndpointUrl) {
 
 		Status status = new Status();
 		status.date = new Date();
@@ -29,6 +29,8 @@ public class AcmepizzaStatus {
 
 		statuses.add(status);
 		if (statuses.size() > 10) statuses.removeFirst();
+		
+		return status.getData();
 	}
 
 	public static String status() {

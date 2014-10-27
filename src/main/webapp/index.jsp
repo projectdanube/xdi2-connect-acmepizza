@@ -38,6 +38,7 @@
 	
 	<% 
 		ConnectionResult connectionResult = (ConnectionResult) request.getAttribute("connectionResult");
+		String email = (String) request.getAttribute("connectionResultEmail");
 	%> 
 	
 	<% if (connectionResult != null) { %>
@@ -46,6 +47,10 @@
 
 	<% if (connectionResult.getCloudNumber() != null) { %>
 	<p>We have identified you as: <b><%= StringEscapeUtils.escapeHtml(connectionResult.getCloudNumber().toString()) %></b></p>
+	<% } %>
+	
+	<% if (email != null) { %>
+	<p>Your e-mail address is <b><%= StringEscapeUtils.escapeHtml(email) %></b></p>
 	<% } %>
 	
 	<% } %>
