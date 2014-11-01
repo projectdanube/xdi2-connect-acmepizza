@@ -30,18 +30,18 @@
 
 	<context-param>
 		<param-name>connectEndpointUri</param-name>
-		<param-value>http://connect-service.projectdanube.org/connect</param-value>
+		<param-value>https://connect-service.projectdanube.org/connect</param-value>
 	</context-param>
 	<context-param>
 		<param-name>baseReturnUri</param-name>
-		<param-value>http://acmepizza.projectdanube.org/</param-value>
+		<param-value>https://acmepizza.projectdanube.org/</param-value>
 	</context-param>
 
 	<!-- SECURITY -->
 
-	<!-- <security-constraint> <web-resource-collection> <web-resource-name>secure</web-resource-name> 
+	<security-constraint> <web-resource-collection> <web-resource-name>secure</web-resource-name> 
 		<url-pattern>/*</url-pattern> </web-resource-collection> <user-data-constraint> 
 		<description>ssl</description> <transport-guarantee>CONFIDENTIAL</transport-guarantee> 
-		</user-data-constraint> </security-constraint> -->
+		</user-data-constraint> </security-constraint>
 
 </web-app>
