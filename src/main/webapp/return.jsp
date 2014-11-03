@@ -14,11 +14,6 @@
 
 <body>
 
-	<div id="header">
-		<center><img src="/images/app.png" class="app">
-		<span id="appname">Example Business Cloud +acmepizza</span></center>
-	</div>
-
 	<center><img src="/images/acmepizza.png" class="splash"></center>
 
 	<div id="main">

@@ -16,11 +16,6 @@
 
 <body>
 
-	<div id="header">
-		<center><img src="/images/app.png" class="app">
-		<span id="appname">Example Business Cloud +acmepizza</span></center>
-	</div>
-
 	<center><img src="/images/acmepizza.png" class="splash"></center>
 
 	<% if (request.getAttribute("error") != null) { %>
@@ -35,37 +30,46 @@
 
 	<div id="main">
 	
-	
 	<% 
 		ConnectionResult connectionResult = (ConnectionResult) request.getAttribute("connectionResult");
 		String email = (String) request.getAttribute("connectionResultEmail");
 	%> 
 	
-	<% if (connectionResult != null) { %>
+	<center><table class="main"><tr><td>
 	
-	<p>And we're back at +acmepizza.</p>
-
-	<% if (connectionResult.getCloudNumber() != null) { %>
-	<p>We have identified you as: <b><%= StringEscapeUtils.escapeHtml(connectionResult.getCloudNumber().toString()) %></b></p>
-	<% } %>
+		<center><img src="/images/app.png" class="app">
+		<span id="appname">Example Business Cloud +acmepizza</span></center>
 	
-	<% if (email != null) { %>
-	<p>Your e-mail address is <b><%= StringEscapeUtils.escapeHtml(email) %></b></p>
-	<% } %>
+	</td><td>
 	
-	<% } %>
-	
-
-	<center><form action="<%= request.getServletContext().getInitParameter("connectEndpointUri") %>" method="post">
-
+		<form action="<%= request.getServletContext().getInitParameter("connectEndpointUri") %>" method="post">
 		<input type="hidden" name="xdiMessageEnvelope" value="<%= StringEscapeUtils.escapeHtml(xdiMessageEnvelope) %>">	
 		<input type="submit" value="" class="xdiconnect">
-		<p>(Send Connection Request)</p>
+		</form>
+		
+	</td></tr>
+
+	<% if (connectionResult != null) { %>
 	
-	</form></center>
+		<tr><td colspan="2">
+	
+		<p>And we're back at +acmepizza.</p>
+	
+		<% if (connectionResult.getCloudNumber() != null) { %>
+		<p>We have identified you as: <b><%= StringEscapeUtils.escapeHtml(connectionResult.getCloudNumber().toString()) %></b></p>
+		<% } %>
+		
+		<% if (email != null) { %>
+		<p>Your e-mail address is <b><%= StringEscapeUtils.escapeHtml(email) %></b></p>
+		<% } %>
+		
+		</td></tr>
+	
+	<% } %>
+	
+	</table></center>	
 
 	</div>
-	
 	
 	<% if (connectionResult != null) { %>
 	

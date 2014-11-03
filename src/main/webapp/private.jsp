@@ -28,9 +28,10 @@
 
 	<div id="main">
 
-	<center>
+	<center><table class="main"><tr><td>
+	<p>Internal Information</p>
 	<p class="small"><%= StringEscapeUtils.escapeHtml(AcmepizzaStatus.status()).replace("\n", "<br>") %></p>
-	</center>
+	</td></tr></table>
 
 	</div>
 
