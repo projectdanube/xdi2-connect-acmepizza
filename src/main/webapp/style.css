@@ -1,0 +1,173 @@
+html {
+}
+
+body {
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+	font-size: 16pt;
+	color: white;
+	background-image: url('/images/back.jpg');
+	background-repeat: repeat;
+	padding-top: 30px;
+	padding-bottom: 110px;
+	margin: 0px;
+}
+
+#header {
+	font-size: 14pt;
+	font-weight: bold;
+	padding: 20px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+#logo {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+}
+
+#logoprojectdanube {
+	position: fixed;
+	right: 100px;
+	bottom: 20px;
+}
+
+#appname {
+	font-size: 20pt;
+	font-weight: bold;
+	padding-right: 20px;
+}
+
+#main {
+	color: black;
+	padding: 10px 100px 10px 100px;
+}
+
+#tech {
+	background: white;
+	color: black;
+	margin-top: 20px;
+	padding: 10px 100px 10px 100px;
+	border: 1px solid black;
+}
+
+#footer {
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	bottom: 0px;
+	margin: 0px;
+	padding: 15px 10px 0px 15px;
+	background-color: #777;
+	color: black;
+	border-top: 4px solid black;
+}
+
+#footer * {
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+	color: #d8540d;
+	border-bottom: 3px solid #d8540d;
+}
+
+hr {
+	color: gray;
+	background-color: gray;
+	height: 3px;
+}
+
+textarea {
+	background-color: white;
+}
+
+textarea.input {
+	border: 3px solid black;
+	padding: 5px;
+	overflow: auto;
+}
+
+textarea.xdi {
+	border: 3px solid black;
+	width: 100%;
+	font-size: 12pt;
+}
+
+input.examplera {
+	width: 200px;
+	height: 80px;
+	margin: 20px;
+	font-family: Courier New, Courier, monospace;
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+input.xdiconnect {
+	background-image: url(/images/logo-connect.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 200px;
+	height: 86px;
+}
+
+input {
+	padding: 5px;
+}
+
+img.app {
+	margin-right: 10px;
+}
+
+img.splash {
+	margin-bottom: 40px;
+	border: 1px solid black;
+}
+
+table.main {
+	padding: 20px;
+	border: 1px solid black;
+	background: white;
+}
+
+a.graphit {
+	display: block;
+	float: right;
+	margin: 15px;
+}
+
+form.convertit {
+	display: block;
+	float: right;
+	margin: 15px;
+}
+
+li.linkcontract {
+	font-family: Courier New, Courier, monospace;
+	font-size: 12pt;
+}
+
+select {
+	padding: 5px;
+}
+
+.code {
+	font-family: Courier New, Courier, monospace;
+	background-color: white;
+}
+
+.result {
+	background-color: #deccff;
+	padding-left: 20px;
+	border: 3px dashed black;
+}
+
+.small {
+	font-size: 12pt;
+}
+
+.no-margin {
+	margin: 0px;
+}
