@@ -1,4 +1,0 @@
-[+]!:uuid:843085a3-0136-4bbb-b0a6-2f0e8d091c87#newsletter{$do}/$get/{$to}<#email>
-([+]!:uuid:843085a3-0136-4bbb-b0a6-2f0e8d091c87#newsletter{$do}$if$and/$true){$from}/$is/[+]!:uuid:843085a3-0136-4bbb-b0a6-2f0e8d091c87
-([+]!:uuid:843085a3-0136-4bbb-b0a6-2f0e8d091c87#newsletter{$do}$if$and/$true){$msg}<$sig><$valid>&/&/true
-([+]!:uuid:843085a3-0136-4bbb-b0a6-2f0e8d091c87/$public)$do/$get/[+]!:uuid:843085a3-0136-4bbb-b0a6-2f0e8d091c87#newsletter{$do}
