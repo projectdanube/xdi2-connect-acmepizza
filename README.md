@@ -1,7 +1,7 @@
 <a href="http://projectdanube.org/" target="_blank"><img src="http://projectdanube.github.com/xdi2/images/projectdanube_logo.png" align="right"></a>
 <img src="http://projectdanube.github.com/xdi2/images/logo64.png"><br>
 
- +acmenews XDI2 demo [https://acmenews.projectdanube.org/](https://acmenews.projectdanube.org/)
+ +acmepizza XDI2 demo [https://acmepizza.projectdanube.org/](https://acmepizza.projectdanube.org/)
 
 A business requesting authority (RA) requests a link contract for reading an email address from an individual authorizing authority (AA). This happens via a button on a webpage.
 
