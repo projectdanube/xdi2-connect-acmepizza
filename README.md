@@ -3,7 +3,7 @@
 
  +acmepizza XDI2 demo [https://acmepizza.projectdanube.org/](https://acmepizza.projectdanube.org/)
 
-A business requesting authority (RA) requests a link contract for reading an email address from an individual authorizing authority (AA). This happens via a button on a webpage.
+A business requesting authority (RA) issues a "connection request" to request a link contract for reading an email address from an individual authorizing authority (AA). This happens via an "XDI Connect" button on a webpage.
 
 ### Information
 
