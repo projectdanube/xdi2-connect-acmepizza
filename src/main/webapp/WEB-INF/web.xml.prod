@@ -30,11 +30,11 @@
 
 	<context-param>
 		<param-name>connectEndpointUri</param-name>
-		<param-value>https://connect-service.projectdanube.org/connect</param-value>
+		<param-value>https://connect.xdi2.org/connect</param-value>
 	</context-param>
 	<context-param>
 		<param-name>baseReturnUri</param-name>
-		<param-value>https://acmepizza.projectdanube.org/</param-value>
+		<param-value>https://acmepizza.xdi2.org/</param-value>
 	</context-param>
 
 	<!-- SECURITY -->
