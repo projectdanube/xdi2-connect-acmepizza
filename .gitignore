@@ -1,2 +1,5 @@
+.externalToolBuilders
+.DS_Store
+/bin/
 /target
 /log4j.log
