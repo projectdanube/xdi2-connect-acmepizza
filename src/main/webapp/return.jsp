@@ -39,13 +39,13 @@
 	<div id="tech">
 	
 	<a class="graphit" target="_blank" href="http://neustar.github.io/xdi-grapheditor/xdi-grapheditor/public_html/index.html?input=<%= request.getRequestURL().toString().replaceFirst("/[^/]+$", "/XDIOutput?outputId=" + request.getAttribute("outputId")) %>">Graph It!</a>
-	<form class="convertit" id="convertit" target="_blank" action="https://server.xdi2.org/XDIConverter" method="post"><input type="hidden" name="resultFormat" value="XDI DISPLAY"><input type="hidden" name="input" value="<%= StringEscapeUtils.escapeHtml(connectionResult.getMessageResult().toString()) %>"><a href="#" onclick="document.getElementById('convertit').submit();">Convert It!</a></form>
+	<form class="convertit" id="convertit" target="_blank" action="https://server.xdi2.org/XDIConverter" method="post"><input type="hidden" name="resultFormat" value="XDI DISPLAY"><input type="hidden" name="input" value="<%= StringEscapeUtils.escapeHtml(connectionResult.getMessagingResponse().toString()) %>"><a href="#" onclick="document.getElementById('convertit').submit();">Convert It!</a></form>
 	
 	<p>Technical Information</p>
 	
 	<p class="small">The XDI message result:</p>
 	
-	<textarea class="xdi" rows="5"><%= StringEscapeUtils.escapeHtml(connectionResult.getMessageResult().toString()) %></textarea>
+	<textarea class="xdi" rows="5"><%= StringEscapeUtils.escapeHtml(connectionResult.getMessagingResponse().toString()) %></textarea>
 	
 	<p>We received the following link contract(s):</p>
 
