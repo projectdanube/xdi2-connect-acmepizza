@@ -1,12 +1,13 @@
 package xdi2.connect.acmepizza;
 
-import java.net.URL;
+import java.net.URI;
 import java.util.ArrayDeque;
 import java.util.Date;
 import java.util.Deque;
 import java.util.Iterator;
 
-import xdi2.client.agent.impl.XDIBasicAgent;
+import xdi2.agent.impl.XDIBasicAgent;
+import xdi2.agent.routing.impl.http.XDIHttpDiscoveryAgentRouter;
 import xdi2.client.exceptions.Xdi2ClientException;
 import xdi2.connect.core.ConnectionResult;
 import xdi2.core.ContextNode;
@@ -20,12 +21,12 @@ public class AcmepizzaStatus {
 
 	private static Deque<Status> statuses = new ArrayDeque<Status> ();
 
-	public static String newStatus(ConnectionResult connectionResult, URL registryEndpointUrl) {
+	public static String newStatus(ConnectionResult connectionResult, URI registryEndpointUri) {
 
 		Status status = new Status();
 		status.date = new Date();
 		status.connectionResult = connectionResult;
-		status.registryEndpointUrl = registryEndpointUrl;
+		status.registryEndpointUri = registryEndpointUri;
 
 		statuses.add(status);
 		if (statuses.size() > 10) statuses.removeFirst();
@@ -49,7 +50,7 @@ public class AcmepizzaStatus {
 
 		private Date date;
 		private ConnectionResult connectionResult;
-		private URL registryEndpointUrl;
+		private URI registryEndpointUri;
 
 		private String getData() {
 
@@ -61,14 +62,14 @@ public class AcmepizzaStatus {
 
 			XDIAddress XDIaddress = XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#email>"));
 
-			XDIBasicAgent XDIagent = new XDIBasicAgent(new XDIDiscoveryClient(this.registryEndpointUrl));
+			XDIBasicAgent XDIagent = new XDIBasicAgent(new XDIHttpDiscoveryAgentRouter(new XDIDiscoveryClient(this.registryEndpointUri)));
 			XDIagent.setLinkContractXDIAddress(linkContract.getContextNode().getXDIAddress());
 
 			ContextNode contextNode;
 
 			try {
 
-				contextNode = XDIagent.get(XDIaddress, null);
+				contextNode = XDIagent.get(XDIaddress);
 			} catch (Xdi2ClientException ex) {
 
 				return ex.getMessage();
