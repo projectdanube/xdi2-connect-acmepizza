@@ -113,6 +113,14 @@ input.xdiconnect {
 	height: 86px;
 }
 
+input.checkout {
+	background-color: #429BCA;
+	font-size: 20pt;
+	color: white;
+	width: 200px;
+	height: 86px;
+}
+
 input {
 	padding: 5px;
 }
@@ -171,3 +179,4 @@ select {
 .no-margin {
 	margin: 0px;
 }
+
