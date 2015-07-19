@@ -10,7 +10,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Example Business Cloud +acmepizza</title>
+	<title>Business Cloud +leshop</title>
 	<link rel="stylesheet" target="_blank" href="/style.css" TYPE="text/css" MEDIA="screen">
 </head>
 
