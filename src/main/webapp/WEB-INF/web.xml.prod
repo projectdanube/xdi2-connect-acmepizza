@@ -34,7 +34,7 @@
 	</context-param>
 	<context-param>
 		<param-name>baseReturnUri</param-name>
-		<param-value>https://acmepizza.xdi2.org/</param-value>
+		<param-value>http://leshop.danubetech.com/</param-value>
 	</context-param>
 
 	<!-- SECURITY -->
