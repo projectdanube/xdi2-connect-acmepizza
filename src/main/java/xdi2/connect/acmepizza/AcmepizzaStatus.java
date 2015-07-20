@@ -78,7 +78,7 @@ public class AcmepizzaStatus {
 				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#first><#name>")));
 				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#last><#name>")));
 				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#street>")));
-				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#postal>")));
+				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#postal><#code>")));
 				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#locality>")));
 				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#country>")));
 
@@ -90,7 +90,7 @@ public class AcmepizzaStatus {
 				buffer.append("<br>");
 				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#street>&"))).getLiteralDataString());
 				buffer.append("<br>");
-				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#postal>&"))).getLiteralDataString());
+				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#postal><#code>&"))).getLiteralDataString());
 				buffer.append("<br>");
 				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#locality>&"))).getLiteralDataString());
 				buffer.append("<br>");
