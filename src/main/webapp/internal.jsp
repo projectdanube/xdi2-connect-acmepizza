@@ -22,7 +22,7 @@
 
 	<% } %>
 
-	<div id="main" style="margin-top: 200px; width: 800px;">
+	<div id="main" style="margin-top: 100px; width: 800px;">
 
 	<center><table class="main"><tr><td>
 	<p>Internal Information</p>
