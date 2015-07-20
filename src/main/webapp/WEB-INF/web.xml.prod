@@ -9,12 +9,12 @@
 	<!-- WEB INTERFACE -->
 
 	<servlet>
-		<servlet-name>acmepizza</servlet-name>
+		<servlet-name>leshop</servlet-name>
 		<servlet-class>xdi2.connect.acmepizza.AcmepizzaReturnServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>acmepizza</servlet-name>
-		<url-pattern>/acmepizza-return</url-pattern>
+		<servlet-name>leshop</servlet-name>
+		<url-pattern>/leshop-return</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
