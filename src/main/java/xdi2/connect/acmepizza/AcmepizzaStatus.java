@@ -60,7 +60,7 @@ public class AcmepizzaStatus {
 			GenericLinkContract linkContract = (GenericLinkContract) linkContracts.next();
 			XDIAddress authorizingAuthority = linkContract.getAuthorizingAuthority();
 
-			XDIAddress XDIaddress = XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#email>"));
+			XDIAddress XDIaddress = XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#street>"));
 
 			XDIBasicAgent XDIagent = new XDIBasicAgent(new XDIHttpDiscoveryAgentRouter(new XDIDiscoveryClient(this.registryEndpointUri)));
 			XDIagent.setLinkContractXDIAddress(linkContract.getContextNode().getXDIAddress());

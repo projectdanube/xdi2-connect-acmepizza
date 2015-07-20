@@ -32,7 +32,7 @@
 	
 	<% 
 		ConnectionResult connectionResult = (ConnectionResult) request.getAttribute("connectionResult");
-		String email = (String) request.getAttribute("connectionResultEmail");
+		String email = (String) request.getAttribute("connectionResultAddress");
 	%> 
 	
 	<center><table class="main"><tr><td>
