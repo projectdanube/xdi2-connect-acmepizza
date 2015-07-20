@@ -14,7 +14,7 @@
 	<link rel="stylesheet" target="_blank" href="/style.css" TYPE="text/css" MEDIA="screen">
 </head>
 
-<body style="background-image: url('/images/websitebackground3.jpg')">
+<body style="background-image: url('/images/websitebackground.jpg')">
 
 	<% if (request.getAttribute("error") != null) { %>
 

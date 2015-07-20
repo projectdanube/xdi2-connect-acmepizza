@@ -103,7 +103,7 @@ public class AcmepizzaReturnServlet extends HttpServlet {
 
 		request.setAttribute(ATTRIBUTE_CONNECT_RESULT, connectionResult);
 		request.setAttribute(ATTRIBUTE_OUTPUT_ID, outputId);
-		request.getRequestDispatcher("/return2.jsp").forward(request, response);
+		request.getRequestDispatcher("/return.jsp").forward(request, response);
 	}
 
 	private static void sendError(HttpServletRequest request, HttpServletResponse response, String xdiMessageEnvelope, String outputId, String error, Exception ex) throws ServletException, IOException {
@@ -112,7 +112,7 @@ public class AcmepizzaReturnServlet extends HttpServlet {
 		request.setAttribute("error", error);
 		request.setAttribute(ATTRIBUTE_CONNECT_RESULT, xdiMessageEnvelope);
 		request.setAttribute(ATTRIBUTE_OUTPUT_ID, outputId);
-		request.getRequestDispatcher("/return2.jsp").forward(request, response);
+		request.getRequestDispatcher("/return.jsp").forward(request, response);
 	}
 
 	private static void sendBadRequest(HttpServletRequest request, HttpServletResponse response, String error, Exception ex) throws ServletException, IOException {
