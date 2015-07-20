@@ -84,18 +84,19 @@ public class AcmepizzaStatus {
 
 				Graph resultGraph = route.constructXDIClient().send(me).getResultGraph();
 
+				buffer.append("\n\n");
 				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#first><#name>&"))).getLiteralDataString());
 				buffer.append(" ");
 				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#last><#name>&"))).getLiteralDataString());
-				buffer.append("<br>");
+				buffer.append("\n");
 				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#street>&"))).getLiteralDataString());
-				buffer.append("<br>");
+				buffer.append("\n");
 				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#postal><#code>&"))).getLiteralDataString());
-				buffer.append("<br>");
+				buffer.append("\n");
 				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#locality>&"))).getLiteralDataString());
-				buffer.append("<br>");
+				buffer.append("\n");
 				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#country>&"))).getLiteralDataString());
-				buffer.append("<br>");
+				buffer.append("\n");
 			} catch (Xdi2ClientException ex) {
 
 				return ex.getMessage();
