@@ -6,7 +6,7 @@ body {
 	font-size: 16pt;
 	color: white;
 	background-image: url('/images/back.jpg');
-	background-repeat: none;
+	background-repeat: no-repeat;
 	padding-top: 30px;
 	padding-bottom: 110px;
 	margin: 0px;
