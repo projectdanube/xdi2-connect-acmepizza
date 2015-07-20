@@ -26,20 +26,11 @@
 		String xdiMessageEnvelope = AcmepizzaConnectionRequest.connectionRequest(request.getServletContext()).getMessageEnvelope().getGraph().toString("XDI/JSON", null);
 	%>
 
-	<div id="main">
-	
-	<% 
-		ConnectionResult connectionResult = (ConnectionResult) request.getAttribute("connectionResult");
-		String email = (String) request.getAttribute("connectionResultEmail");
-	%> 
+	<div id="main" style="margin-top: 200px; width: 800px;">
 
-	<div style="position: absolute; top: 230px; right: 100px;">	
-		<p>Or: Connect to data in<br>your personal cloud</p>
-		<form action="<%= request.getServletContext().getInitParameter("connectEndpointUri") %>" method="post">
-		<input type="hidden" name="xdiMessageEnvelope" value="<%= StringEscapeUtils.escapeHtml(xdiMessageEnvelope) %>">	
-		<input type="submit" value="" class="xdiconnect">
-		</form>
-	</div>
+	<center><table class="main"><tr><td>
+	<p>Thank you for shopping with us</p>
+	</td></tr></table>
 		
 	</div>
 
