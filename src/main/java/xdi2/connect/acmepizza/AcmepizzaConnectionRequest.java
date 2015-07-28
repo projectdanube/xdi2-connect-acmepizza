@@ -22,8 +22,8 @@ public class AcmepizzaConnectionRequest {
 				String baseReturnUri = servletContext.getInitParameter("baseReturnUri");
 
 				CONNECTION_REQUEST = ConnectionRequest.fromMessageEnvelope(MessageEnvelope.fromGraph(MemoryGraphFactory.getInstance().loadGraph(AcmepizzaConnectionRequest.class.getResourceAsStream("/message.xdi"))));
-				CONNECTION_REQUEST.sign(CloudName.create("+acmepizza"), "acmepizza");
-				CONNECTION_REQUEST.setReturnUri(URI.create(baseReturnUri + "acmepizza-return"));
+				CONNECTION_REQUEST.sign(CloudName.create("+leshop"), "acmepizza");
+				CONNECTION_REQUEST.setReturnUri(URI.create(baseReturnUri + "leshop-return"));
 			} catch (Exception ex) {
 
 				CONNECTION_REQUEST = null;

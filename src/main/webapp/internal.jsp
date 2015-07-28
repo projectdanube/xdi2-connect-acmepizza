@@ -22,14 +22,11 @@
 
 	<% } %>
 
-	<%
-		String xdiMessageEnvelope = AcmepizzaConnectionRequest.connectionRequest(request.getServletContext()).getMessageEnvelope().getGraph().toString("XDI/JSON", null);
-	%>
-
 	<div id="main" style="margin-top: 100px; width: 800px;">
 
 	<center><table class="main"><tr><td>
-	<p>Thank you for shopping with us</p>
+	<p>Internal Information</p>
+	<p class="small"><%= StringEscapeUtils.escapeHtml(AcmepizzaStatus.status()).replace("\n", "<br>") %></p>
 	</td></tr></table>
 		
 	</div>

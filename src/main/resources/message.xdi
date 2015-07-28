@@ -1,5 +1,5 @@
-+!:uuid:843085a3-0136-4bbb-b0a6-2f0e8d091c87[$msg]@0/$is()/({$to})
-+!:uuid:843085a3-0136-4bbb-b0a6-2f0e8d091c87[$msg]@0$do/$do{}/+!:uuid:843085a3-0136-4bbb-b0a6-2f0e8d091c87#newsletter{$do}
-+!:uuid:843085a3-0136-4bbb-b0a6-2f0e8d091c87[$msg]@0/$do/({$to}/+!:uuid:ca51aeb9-e09e-4305-89d7-87a944a1e1fa)+!:uuid:ca51aeb9-e09e-4305-89d7-87a944a1e1fa#community$do
-+!:uuid:843085a3-0136-4bbb-b0a6-2f0e8d091c87[$msg]@0<#return><$uri>/&/"..."
-+!:uuid:843085a3-0136-4bbb-b0a6-2f0e8d091c87[$msg]@0<$sig>/&/"..."
++!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87[$msg]@0/$is()/({$to})
++!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87[$msg]@0$do/$do{}/+!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}
++!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87[$msg]@0/$do/({$to}/+!:uuid:ca51aeb9-e09e-4305-89d7-87a944a1e1fa)+!:uuid:ca51aeb9-e09e-4305-89d7-87a944a1e1fa#community$do
++!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87[$msg]@0<#return><$uri>/&/"..."
++!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87[$msg]@0<$sig>/&/"..."

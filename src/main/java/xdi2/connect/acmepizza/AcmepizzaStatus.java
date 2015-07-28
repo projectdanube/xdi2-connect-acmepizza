@@ -8,14 +8,18 @@ import java.util.Iterator;
 
 import xdi2.agent.impl.XDIBasicAgent;
 import xdi2.agent.routing.impl.http.XDIHttpDiscoveryAgentRouter;
+import xdi2.client.XDIClient;
+import xdi2.client.XDIClientRoute;
 import xdi2.client.exceptions.Xdi2ClientException;
 import xdi2.connect.core.ConnectionResult;
-import xdi2.core.ContextNode;
+import xdi2.core.Graph;
 import xdi2.core.features.linkcontracts.instance.GenericLinkContract;
 import xdi2.core.features.linkcontracts.instance.LinkContract;
 import xdi2.core.syntax.XDIAddress;
 import xdi2.core.util.XDIAddressUtil;
 import xdi2.discovery.XDIDiscoveryClient;
+import xdi2.messaging.Message;
+import xdi2.messaging.MessageEnvelope;
 
 public class AcmepizzaStatus {
 
@@ -30,7 +34,7 @@ public class AcmepizzaStatus {
 
 		statuses.add(status);
 		if (statuses.size() > 10) statuses.removeFirst();
-		
+
 		return status.getData();
 	}
 
@@ -58,26 +62,47 @@ public class AcmepizzaStatus {
 			if (linkContracts == null || ! linkContracts.hasNext()) return null;
 
 			GenericLinkContract linkContract = (GenericLinkContract) linkContracts.next();
+			XDIAddress requestingAuthority = linkContract.getRequestingAuthority();
 			XDIAddress authorizingAuthority = linkContract.getAuthorizingAuthority();
 
-			XDIAddress XDIaddress = XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#email>"));
-
 			XDIBasicAgent XDIagent = new XDIBasicAgent(new XDIHttpDiscoveryAgentRouter(new XDIDiscoveryClient(this.registryEndpointUri)));
-			XDIagent.setLinkContractXDIAddress(linkContract.getContextNode().getXDIAddress());
 
-			ContextNode contextNode;
+			StringBuffer buffer = new StringBuffer();
 
 			try {
 
-				contextNode = XDIagent.get(XDIaddress);
+				XDIClientRoute<? extends XDIClient> route = XDIagent.route(authorizingAuthority);
+				MessageEnvelope me = route.constructMessageEnvelope();
+				Message m = route.constructMessage(me, requestingAuthority);
+				m.setLinkContractXDIAddress(linkContract.getContextNode().getXDIAddress());
+				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#first><#name>")));
+				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#last><#name>")));
+				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#street>")));
+				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#postal><#code>")));
+				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#locality>")));
+				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#country>")));
+
+				Graph resultGraph = route.constructXDIClient().send(me).getResultGraph();
+
+				buffer.append("\n\n");
+				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#first><#name>&"))).getLiteralDataString());
+				buffer.append(" ");
+				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#last><#name>&"))).getLiteralDataString());
+				buffer.append("\n");
+				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#street>&"))).getLiteralDataString());
+				buffer.append("\n");
+				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#postal><#code>&"))).getLiteralDataString());
+				buffer.append("\n");
+				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#locality>&"))).getLiteralDataString());
+				buffer.append("\n");
+				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#country>&"))).getLiteralDataString());
+				buffer.append("\n");
 			} catch (Xdi2ClientException ex) {
 
 				return ex.getMessage();
 			}
 
-			if (contextNode == null) return null;
-
-			return contextNode.getLiteralDataString();
+			return buffer.toString();
 		}
 
 		@Override

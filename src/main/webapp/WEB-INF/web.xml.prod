@@ -9,12 +9,12 @@
 	<!-- WEB INTERFACE -->
 
 	<servlet>
-		<servlet-name>acmepizza</servlet-name>
+		<servlet-name>leshop</servlet-name>
 		<servlet-class>xdi2.connect.acmepizza.AcmepizzaReturnServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>acmepizza</servlet-name>
-		<url-pattern>/acmepizza-return</url-pattern>
+		<servlet-name>leshop</servlet-name>
+		<url-pattern>/leshop-return</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -34,7 +34,7 @@
 	</context-param>
 	<context-param>
 		<param-name>baseReturnUri</param-name>
-		<param-value>https://acmepizza.xdi2.org/</param-value>
+		<param-value>http://leshop.danubetech.com/</param-value>
 	</context-param>
 
 	<!-- SECURITY -->

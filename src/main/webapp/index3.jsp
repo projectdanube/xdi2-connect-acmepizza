@@ -14,7 +14,7 @@
 	<link rel="stylesheet" target="_blank" href="/style.css" TYPE="text/css" MEDIA="screen">
 </head>
 
-<body style="background-image: url('/images/websitebackground.jpg')">
+<body style="background-image: url('/images/websitebackground3.jpg')">
 
 	<% if (request.getAttribute("error") != null) { %>
 
@@ -33,16 +33,11 @@
 		String email = (String) request.getAttribute("connectionResultEmail");
 	%> 
 
-	<input type="text" size="1" name="c1" style="position: absolute; top:530px; left: 100px;">
-	<input type="text" size="1" name="c1" style="position: absolute; top:530px; left: 290px;">
-	<input type="text" size="1" name="c1" style="position: absolute; top:530px; left: 480px;">
-	<input type="text" size="1" name="c1" style="position: absolute; top:530px; left: 670px;">
-	<input type="text" size="1" name="c1" style="position: absolute; top:530px; left: 855px;">
-
-
-	<div style="position: absolute; top: 230px; right: 20px;">	
-		<form action="index3.jsp" method="get">
-		<input type="submit" value="Checkout" class="checkout">
+	<div style="position: absolute; top: 230px; right: 100px;">	
+		<p>Or: Connect to data in<br>your personal cloud</p>
+		<form action="<%= request.getServletContext().getInitParameter("connectEndpointUri") %>" method="post">
+		<input type="hidden" name="xdiMessageEnvelope" value="<%= StringEscapeUtils.escapeHtml(xdiMessageEnvelope) %>">	
+		<input type="submit" value="" class="xdiconnect">
 		</form>
 	</div>
 		
