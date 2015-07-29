@@ -72,8 +72,8 @@ public class AcmepizzaStatus {
 			try {
 
 				XDIClientRoute<? extends XDIClient> route = XDIagent.route(authorizingAuthority);
-				MessageEnvelope me = route.constructMessageEnvelope();
-				Message m = route.constructMessage(me, requestingAuthority);
+				MessageEnvelope me = route.createMessageEnvelope();
+				Message m = route.createMessage(me, requestingAuthority);
 				m.setLinkContractXDIAddress(linkContract.getContextNode().getXDIAddress());
 				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#first><#name>")));
 				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#last><#name>")));
