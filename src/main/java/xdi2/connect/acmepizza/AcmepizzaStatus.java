@@ -8,7 +8,6 @@ import java.util.Iterator;
 
 import xdi2.agent.impl.XDIBasicAgent;
 import xdi2.agent.routing.impl.http.XDIHttpDiscoveryAgentRouter;
-import xdi2.client.XDIClient;
 import xdi2.client.XDIClientRoute;
 import xdi2.client.exceptions.Xdi2ClientException;
 import xdi2.connect.core.ConnectionResult;
@@ -71,9 +70,9 @@ public class AcmepizzaStatus {
 
 			try {
 
-				XDIClientRoute<? extends XDIClient> route = XDIagent.route(authorizingAuthority);
-				MessageEnvelope me = route.constructMessageEnvelope();
-				Message m = route.constructMessage(me, requestingAuthority);
+				XDIClientRoute<?> route = XDIagent.route(authorizingAuthority);
+				MessageEnvelope me = route.createMessageEnvelope();
+				Message m = route.createMessage(me, requestingAuthority);
 				m.setLinkContractXDIAddress(linkContract.getContextNode().getXDIAddress());
 				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#first><#name>")));
 				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#last><#name>")));
