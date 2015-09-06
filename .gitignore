@@ -1,6 +1,7 @@
 .externalToolBuilders
 .DS_Store
 log4j.log
+.classpath
 .project
 /.settings/
 /target/
