@@ -24,12 +24,12 @@ public class AcmepizzaStatus {
 
 	private static Deque<Status> statuses = new ArrayDeque<Status> ();
 
-	public static String newStatus(ConnectionResult connectionResult, URI registryEndpointUri) {
+	public static String newStatus(ConnectionResult connectionResult, URI discovery) {
 
 		Status status = new Status();
 		status.date = new Date();
 		status.connectionResult = connectionResult;
-		status.registryEndpointUri = registryEndpointUri;
+		status.discovery = discovery;
 
 		statuses.add(status);
 		if (statuses.size() > 10) statuses.removeFirst();
@@ -53,7 +53,7 @@ public class AcmepizzaStatus {
 
 		private Date date;
 		private ConnectionResult connectionResult;
-		private URI registryEndpointUri;
+		private URI discovery;
 
 		private String getData() {
 
@@ -64,7 +64,7 @@ public class AcmepizzaStatus {
 			XDIAddress requestingAuthority = linkContract.getRequestingAuthority();
 			XDIAddress authorizingAuthority = linkContract.getAuthorizingAuthority();
 
-			XDIBasicAgent XDIagent = new XDIBasicAgent(new XDIHttpDiscoveryAgentRouter(new XDIDiscoveryClient(this.registryEndpointUri)));
+			XDIBasicAgent XDIagent = new XDIBasicAgent(new XDIHttpDiscoveryAgentRouter(new XDIDiscoveryClient(this.discovery)));
 
 			StringBuffer buffer = new StringBuffer();
 
