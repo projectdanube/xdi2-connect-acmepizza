@@ -23,7 +23,7 @@
 	<% } %>
 
 	<%
-		String xdiMessageEnvelope = AcmepizzaConnectionRequest.connectionRequest(request.getServletContext()).getMessageEnvelope().getGraph().toString("XDI/JSON", null);
+		String xdi = AcmepizzaConnectionRequest.connectionRequest(request.getServletContext()).getMessageEnvelope().getGraph().toString("XDI/JSON", null);
 	%>
 
 	<div id="main">
@@ -36,7 +36,7 @@
 	<div style="position: absolute; top: 230px; right: 100px;">	
 		<p>Or: Connect to data in<br>your personal cloud</p>
 		<form action="<%= request.getServletContext().getInitParameter("connectEndpointUri") %>" method="post">
-		<input type="hidden" name="xdiMessageEnvelope" value="<%= StringEscapeUtils.escapeHtml(xdiMessageEnvelope) %>">	
+		<input type="hidden" name="xdi" value="<%= StringEscapeUtils.escapeHtml(xdi) %>">	
 		<input type="submit" value="" class="xdiconnect">
 		</form>
 	</div>

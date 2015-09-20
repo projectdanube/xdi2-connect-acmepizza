@@ -27,7 +27,7 @@ public class AcmepizzaReturnServlet extends HttpServlet {
 	private static Logger log = LoggerFactory.getLogger(AcmepizzaReturnServlet.class);
 
 	public static final String PARAMETER_XDI_MESSAGE_RESULT = "xdiMessagingResponse";
-	public static final String PARAMETER_REGISTRY_ENDPOINT_URI = "registryEndpointUri";
+	public static final String PARAMETER_DISCOVERY_ENDPOINT = "discovery";
 
 	public static final String ATTRIBUTE_CONNECT_RESULT = "connectionResult";
 	public static final String ATTRIBUTE_OUTPUT_ID = "outputId";
@@ -41,9 +41,9 @@ public class AcmepizzaReturnServlet extends HttpServlet {
 		// read parameters
 
 		String xdiMessagingResponse = request.getParameter(PARAMETER_XDI_MESSAGE_RESULT);
-		String registryEndpointUriString = request.getParameter(PARAMETER_REGISTRY_ENDPOINT_URI);
+		String discoveryString = request.getParameter(PARAMETER_DISCOVERY_ENDPOINT);
 
-		URI registryEndpointUri = registryEndpointUriString == null ? null : URI.create(registryEndpointUriString);
+		URI discovery = discoveryString == null ? null : URI.create(discoveryString);
 
 		// check Connect response
 
@@ -72,7 +72,7 @@ public class AcmepizzaReturnServlet extends HttpServlet {
 
 		// new status
 
-		String address = AcmepizzaStatus.newStatus(connectionResult, registryEndpointUri);
+		String address = AcmepizzaStatus.newStatus(connectionResult, discovery);
 		request.setAttribute(ATTRIBUTE_CONNECT_RESULT_ADDRESS, address);
 
 		// show UI
@@ -106,11 +106,11 @@ public class AcmepizzaReturnServlet extends HttpServlet {
 		request.getRequestDispatcher("/return.jsp").forward(request, response);
 	}
 
-	private static void sendError(HttpServletRequest request, HttpServletResponse response, String xdiMessageEnvelope, String outputId, String error, Exception ex) throws ServletException, IOException {
+	private static void sendError(HttpServletRequest request, HttpServletResponse response, String xdi, String outputId, String error, Exception ex) throws ServletException, IOException {
 
 		log.error("Error: " + error, ex);
 		request.setAttribute("error", error);
-		request.setAttribute(ATTRIBUTE_CONNECT_RESULT, xdiMessageEnvelope);
+		request.setAttribute(ATTRIBUTE_CONNECT_RESULT, xdi);
 		request.setAttribute(ATTRIBUTE_OUTPUT_ID, outputId);
 		request.getRequestDispatcher("/return.jsp").forward(request, response);
 	}
