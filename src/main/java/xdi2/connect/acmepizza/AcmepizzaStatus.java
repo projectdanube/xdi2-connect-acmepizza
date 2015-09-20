@@ -70,7 +70,7 @@ public class AcmepizzaStatus {
 
 			try {
 
-				XDIClientRoute<? extends XDIClient> route = XDIagent.route(authorizingAuthority);
+				XDIClientRoute<?> route = XDIagent.route(authorizingAuthority);
 				MessageEnvelope me = route.createMessageEnvelope();
 				Message m = route.createMessage(me, requestingAuthority);
 				m.setLinkContractXDIAddress(linkContract.getContextNode().getXDIAddress());
