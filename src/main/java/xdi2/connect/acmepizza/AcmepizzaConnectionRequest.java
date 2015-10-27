@@ -22,22 +22,20 @@ public class AcmepizzaConnectionRequest {
 
 		if (CONNECTION_REQUEST == null) {
 
-			log.info("Connection request: " + CONNECTION_REQUEST.getMessageEnvelope().getGraph().toString());
-
 			try {
 
 				String baseReturnUri = servletContext.getInitParameter("baseReturnUri");
 
 				CONNECTION_REQUEST = ConnectionRequest.fromMessageEnvelope(MessageEnvelope.fromGraph(MemoryGraphFactory.getInstance().loadGraph(AcmepizzaConnectionRequest.class.getResourceAsStream("/message.xdi"))));
+				log.info("Connection request: " + CONNECTION_REQUEST.getMessageEnvelope().getGraph().toString());
 				CONNECTION_REQUEST.sign(CloudName.create("+leshop"), "acmepizza");
 				CONNECTION_REQUEST.setReturnUri(URI.create(baseReturnUri + "leshop-return"));
+				log.info("Connection request ready: " + CONNECTION_REQUEST.getMessageEnvelope().getGraph().toString());
 			} catch (Exception ex) {
 
 				CONNECTION_REQUEST = null;
 				throw new RuntimeException(ex.getMessage(), ex);
 			}
-
-			log.info("Connection request ready: " + CONNECTION_REQUEST.getMessageEnvelope().getGraph().toString());
 		}
 
 		return CONNECTION_REQUEST;
