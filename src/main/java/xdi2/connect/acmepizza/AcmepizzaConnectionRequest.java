@@ -4,6 +4,9 @@ import java.net.URI;
 
 import javax.servlet.ServletContext;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import xdi2.connect.core.ConnectionRequest;
 import xdi2.core.impl.memory.MemoryGraphFactory;
 import xdi2.core.syntax.CloudName;
@@ -13,9 +16,13 @@ public class AcmepizzaConnectionRequest {
 
 	public static ConnectionRequest CONNECTION_REQUEST = null;
 
+	private static Logger log = LoggerFactory.getLogger(AcmepizzaConnectionRequest.class);
+
 	public static ConnectionRequest connectionRequest(ServletContext servletContext) {
 
 		if (CONNECTION_REQUEST == null) {
+
+			log.info("Connection request: " + CONNECTION_REQUEST.getMessageEnvelope().getGraph().toString());
 
 			try {
 
@@ -29,6 +36,8 @@ public class AcmepizzaConnectionRequest {
 				CONNECTION_REQUEST = null;
 				throw new RuntimeException(ex.getMessage(), ex);
 			}
+
+			log.info("Connection request ready: " + CONNECTION_REQUEST.getMessageEnvelope().getGraph().toString());
 		}
 
 		return CONNECTION_REQUEST;
