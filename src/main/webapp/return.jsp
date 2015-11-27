@@ -10,6 +10,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="refresh" content="3; url=/internal.jsp">
 	<title>Business Cloud +leshop</title>
 	<link rel="stylesheet" target="_blank" href="/style.css" TYPE="text/css" MEDIA="screen">
 </head>
@@ -30,6 +31,7 @@
 
 	<center><table class="main"><tr><td>
 	<p>Thank you for shopping with us</p>
+	<p>Please wait...</p>
 	</td></tr></table>
 		
 	</div>
