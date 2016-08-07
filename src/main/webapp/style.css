@@ -110,7 +110,7 @@ input.xdiconnect {
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 200px;
-	height: 86px;
+	height: 46px;
 }
 
 input.checkout {
@@ -118,7 +118,7 @@ input.checkout {
 	font-size: 20pt;
 	color: white;
 	width: 200px;
-	height: 86px;
+	height: 46px;
 }
 
 input {

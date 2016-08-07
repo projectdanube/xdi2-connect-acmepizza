@@ -40,7 +40,7 @@
 	<input type="text" size="1" name="c1" style="position: absolute; top:530px; left: 855px;">
 
 
-	<div style="position: absolute; top: 230px; right: 20px;">	
+	<div style="position: absolute; top: 10px; left: 800px;">	
 		<form action="index3.jsp" method="get">
 		<input type="submit" value="Checkout" class="checkout">
 		</form>
