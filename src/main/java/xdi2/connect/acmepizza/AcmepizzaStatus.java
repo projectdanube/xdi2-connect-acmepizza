@@ -74,12 +74,12 @@ public class AcmepizzaStatus {
 				MessageEnvelope me = route.createMessageEnvelope();
 				Message m = route.createMessage(me, requestingAuthority);
 				m.setLinkContractXDIAddress(linkContract.getContextNode().getXDIAddress());
-				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#first><#name>")));
-				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("<#last><#name>")));
-				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#street>")));
-				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#postal><#code>")));
-				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#locality>")));
-				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("#address<#country>")));
+				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card<#first><#name>")));
+				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card<#last><#name>")));
+				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card#address<#street>")));
+				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card#address<#postal><#code>")));
+				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card#address<#locality>")));
+				m.createGetOperation(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card#address<#country>")));
 
 				Graph resultGraph = route.constructXDIClient().send(me).getResultGraph();
 
