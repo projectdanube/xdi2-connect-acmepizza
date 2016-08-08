@@ -1,8 +1,9 @@
-+!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}/$get/{$to}<#first><#name>
-+!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}/$get/{$to}#address<#street>
-+!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}/$get/{$to}#address<#postal>
-+!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}/$get/{$to}#address<#locality>
-+!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}/$get/{$to}#address<#country>
++!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}/$get/{$to}$card<#first><#name>
++!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}/$get/{$to}$card<#last><#name>
++!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}/$get/{$to}$card#address<#street>
++!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}/$get/{$to}$card#address<#postal>
++!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}/$get/{$to}$card#address<#locality>
++!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}/$get/{$to}$card#address<#country>
 (+!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}$if$and/$true){$from}/$is/+!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87
 (+!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}$if$and/$true){$msg}<$sig><$valid>/&/true
 (+!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87/$public)$do/$get/+!:uuid:4e63f740-86d1-4874-ac2f-4386de5cdc87#checkout{$do}
