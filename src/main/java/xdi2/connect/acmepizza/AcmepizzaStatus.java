@@ -12,6 +12,7 @@ import xdi2.client.XDIClientRoute;
 import xdi2.client.exceptions.Xdi2ClientException;
 import xdi2.connect.core.ConnectionResult;
 import xdi2.core.Graph;
+import xdi2.core.LiteralNode;
 import xdi2.core.features.linkcontracts.instance.GenericLinkContract;
 import xdi2.core.features.linkcontracts.instance.LinkContract;
 import xdi2.core.syntax.XDIAddress;
@@ -83,19 +84,20 @@ public class AcmepizzaStatus {
 
 				Graph resultGraph = route.constructXDIClient().send(me).getResultGraph();
 
+				LiteralNode literalNode;
 				buffer.append("\n\n");
-				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card<#first><#name>&"))).getLiteralDataString());
-				buffer.append(" ");
-				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card<#last><#name>&"))).getLiteralDataString());
-				buffer.append("\n");
-				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card#address<#street>&"))).getLiteralDataString());
-				buffer.append("\n");
-				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card#address<#postal><#code>&"))).getLiteralDataString());
-				buffer.append("\n");
-				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card#address<#locality>&"))).getLiteralDataString());
-				buffer.append("\n");
-				buffer.append(resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card#address<#country>&"))).getLiteralDataString());
-				buffer.append("\n");
+				literalNode = resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card<#first><#name>&")));
+				buffer.append(literalNode != null ? (literalNode.getLiteralData() + " ") : " ");
+				literalNode = resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card<#last><#name>&")));
+				buffer.append(literalNode != null ? (literalNode.getLiteralData() + "\n") : "\n");
+				literalNode = resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card#address<#street>&")));
+				buffer.append(literalNode != null ? (literalNode.getLiteralData() + "\n") : "\n");
+				literalNode = resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card#address<#postal><#code>&")));
+				buffer.append(literalNode != null ? (literalNode.getLiteralData() + "\n") : "\n");
+				literalNode = resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card#address<#locality>&")));
+				buffer.append(literalNode != null ? (literalNode.getLiteralData() + "\n") : "\n");
+				literalNode = resultGraph.getDeepLiteralNode(XDIAddressUtil.concatXDIAddresses(authorizingAuthority, XDIAddress.create("$card#address<#country>&")));
+				buffer.append(literalNode != null ? (literalNode.getLiteralData() + "\n") : "\n");
 			} catch (Xdi2ClientException ex) {
 
 				return ex.getMessage();
