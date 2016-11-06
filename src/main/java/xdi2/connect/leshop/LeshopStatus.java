@@ -1,4 +1,4 @@
-package xdi2.connect.acmepizza;
+package xdi2.connect.leshop;
 
 import java.net.URI;
 import java.util.ArrayDeque;
@@ -21,7 +21,7 @@ import xdi2.discovery.XDIDiscoveryClient;
 import xdi2.messaging.Message;
 import xdi2.messaging.MessageEnvelope;
 
-public class AcmepizzaStatus {
+public class LeshopStatus {
 
 	private static Deque<Status> statuses = new ArrayDeque<Status> ();
 

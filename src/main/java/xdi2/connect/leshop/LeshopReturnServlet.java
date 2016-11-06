@@ -1,4 +1,4 @@
-package xdi2.connect.acmepizza;
+package xdi2.connect.leshop;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -20,11 +20,11 @@ import xdi2.discovery.XDIDiscoveryClient;
 import xdi2.messaging.response.LightMessagingResponse;
 import xdi2.messaging.response.MessagingResponse;
 
-public class AcmepizzaReturnServlet extends HttpServlet {
+public class LeshopReturnServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 6595229713134390821L;
 
-	private static Logger log = LoggerFactory.getLogger(AcmepizzaReturnServlet.class);
+	private static Logger log = LoggerFactory.getLogger(LeshopReturnServlet.class);
 
 	public static final String PARAMETER_XDI_MESSAGE_RESULT = "xdi";
 	public static final String PARAMETER_DISCOVERY_ENDPOINT = "discovery";
@@ -78,7 +78,7 @@ public class AcmepizzaReturnServlet extends HttpServlet {
 
 		// new status
 
-		String address = AcmepizzaStatus.newStatus(connectionResult, discovery);
+		String address = LeshopStatus.newStatus(connectionResult, discovery);
 		request.setAttribute(ATTRIBUTE_CONNECT_RESULT_ADDRESS, address);
 
 		// show UI

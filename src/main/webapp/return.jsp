@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="org.apache.commons.lang.StringEscapeUtils" %>
-<%@ page import="xdi2.connect.acmepizza.AcmepizzaConnectionRequest" %>
-<%@ page import="xdi2.connect.acmepizza.AcmepizzaStatus" %>
+<%@ page import="xdi2.connect.leshop.LeshopConnectionRequest" %>
+<%@ page import="xdi2.connect.leshop.LeshopStatus" %>
 <%@ page import="xdi2.connect.core.ConnectionResult" %>
 <%@ page import="xdi2.core.features.linkcontracts.instance.LinkContract" %>
 <%@ page import="java.util.Iterator" %>
@@ -24,7 +24,7 @@
 	<% } %>
 
 	<%
-		String xdi = AcmepizzaConnectionRequest.connectionRequest(request.getServletContext()).getMessageEnvelope().getGraph().toString("XDI/JSON", null);
+		String xdi = LeshopConnectionRequest.connectionRequest(request.getServletContext()).getMessageEnvelope().getGraph().toString("XDI/JSON", null);
 	%>
 
 	<div id="main" style="margin-top: 100px; width: 800px;">

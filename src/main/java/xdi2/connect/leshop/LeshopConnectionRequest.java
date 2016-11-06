@@ -1,4 +1,4 @@
-package xdi2.connect.acmepizza;
+package xdi2.connect.leshop;
 
 import java.net.URI;
 
@@ -12,11 +12,11 @@ import xdi2.core.impl.memory.MemoryGraphFactory;
 import xdi2.core.syntax.CloudName;
 import xdi2.messaging.MessageEnvelope;
 
-public class AcmepizzaConnectionRequest {
+public class LeshopConnectionRequest {
 
 	public static ConnectionRequest CONNECTION_REQUEST = null;
 
-	private static Logger log = LoggerFactory.getLogger(AcmepizzaConnectionRequest.class);
+	private static Logger log = LoggerFactory.getLogger(LeshopConnectionRequest.class);
 
 	public static ConnectionRequest connectionRequest(ServletContext servletContext) {
 
@@ -26,7 +26,7 @@ public class AcmepizzaConnectionRequest {
 
 				String baseReturnUri = servletContext.getInitParameter("baseReturnUri");
 
-				CONNECTION_REQUEST = ConnectionRequest.fromMessageEnvelope(MessageEnvelope.fromGraph(MemoryGraphFactory.getInstance().loadGraph(AcmepizzaConnectionRequest.class.getResourceAsStream("/message.xdi"))));
+				CONNECTION_REQUEST = ConnectionRequest.fromMessageEnvelope(MessageEnvelope.fromGraph(MemoryGraphFactory.getInstance().loadGraph(LeshopConnectionRequest.class.getResourceAsStream("/message.xdi"))));
 				log.info("Connection request: " + CONNECTION_REQUEST.getMessageEnvelope().getGraph().toString());
 				CONNECTION_REQUEST.sign(CloudName.create("+leshop"), "acmepizza");
 				CONNECTION_REQUEST.setReturnUri(URI.create(baseReturnUri + "leshop-return"));
