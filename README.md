@@ -1,7 +1,7 @@
 <a href="http://projectdanube.org/" target="_blank"><img src="http://projectdanube.github.com/xdi2/images/projectdanube_logo.png" align="right"></a>
 <img src="http://projectdanube.github.com/xdi2/images/logo64.png"><br>
 
- +leshop XDI2 demo [https://leshop.danubetech.com/](https://leshop.danubetech.com/)
+ +leshop XDI2 demo [https://leshop.xdi2.org/](https://leshop.xdi2.org/)
 
 A business requesting authority (RA) issues a "connection request" to request a link contract for reading an email address from an individual authorizing authority (AA). This happens via an "XDI Connect" button on a webpage.
 
