@@ -13,8 +13,8 @@ import xdi2.client.exceptions.Xdi2ClientException;
 import xdi2.connect.core.ConnectionResult;
 import xdi2.core.Graph;
 import xdi2.core.LiteralNode;
-import xdi2.core.features.linkcontracts.instance.GenericLinkContract;
 import xdi2.core.features.linkcontracts.instance.LinkContract;
+import xdi2.core.features.linkcontracts.instance.RelationshipLinkContract;
 import xdi2.core.syntax.XDIAddress;
 import xdi2.core.util.XDIAddressUtil;
 import xdi2.discovery.XDIDiscoveryClient;
@@ -61,7 +61,7 @@ public class LeshopStatus {
 			Iterator<LinkContract> linkContracts = this.connectionResult.getLinkContracts();
 			if (linkContracts == null || ! linkContracts.hasNext()) return null;
 
-			GenericLinkContract linkContract = (GenericLinkContract) linkContracts.next();
+			RelationshipLinkContract linkContract = (RelationshipLinkContract) linkContracts.next();
 			XDIAddress requestingAuthority = linkContract.getRequestingAuthority();
 			XDIAddress authorizingAuthority = linkContract.getAuthorizingAuthority();
 
